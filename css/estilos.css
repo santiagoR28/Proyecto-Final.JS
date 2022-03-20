@@ -159,14 +159,14 @@ footer {
   border-radius: 5px;
 }
 
-.botones{
+.botones {
   height: 50px;
   font-size: 14px;
 }
 
 /* carrito */
 
-.carrito{
+.carrito {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -185,7 +185,7 @@ footer {
   margin-top: 30px;
 }
 
-#contDeProd{
+#contDeProd {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -198,6 +198,10 @@ footer {
   margin-top: 30px;
 }
 
-.img{
+.img {
   width: 100%;
+}
+
+#containerCosto {
+  text-align: center;
 }

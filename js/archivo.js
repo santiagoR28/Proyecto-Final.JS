@@ -8,23 +8,11 @@ if (localStorage.getItem("costo")) {
   costoTotal = JSON.parse(localStorage.getItem("costo"));
 }
 
-// funcion para visualizar productos en el carrito
-const ViewCost = () => {
-  const VerCosto = document.getElementById("containerCosto");
-  const VerCostoViejo = document.getElementById("costo");
-  let vistaCosto = document.createElement("div");
-  vistaCosto.setAttribute("id", "VerCosto");
-  VerCosto.replaceChild(vistaCosto, VerCostoViejo);
-  // Ver el costo total
-  let costoTotalView = document.createElement("h2");
-  costoTotalView.innerHTML = `El costo total de tus productos es de: $${costoTotal}`;
-  vistaCosto.append(costoTotalView);
-};
-
 // Muestra los productos en el HTML
 productos.forEach((producto) => {
   const contenedor = document.getElementById("flex2");
   let productView = document.createElement("div");
+  // tarjetas
   productView.innerHTML = ` 
   <div class="card producto" style="width: 18rem">
   <img
@@ -42,9 +30,8 @@ productos.forEach((producto) => {
        `;
   contenedor.append(productView);
 
-  const botonAgregar = document.getElementById(`btn${producto.id}`);
-
   // Verifica si ya en el carrito existe el producto agregado
+  const botonAgregar = document.getElementById(`btn${producto.id}`);
   botonAgregar.onclick = () => {
     const existe = carrito.find((elemento) => elemento.id === producto.id);
 
