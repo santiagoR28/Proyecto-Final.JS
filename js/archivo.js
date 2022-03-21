@@ -56,5 +56,7 @@ productos.forEach((producto) => {
 
     localStorage.setItem("Carrito", JSON.stringify(carrito));
     localStorage.setItem("costo", costoTotal);
+
+    alert("Se ha agregado tu producto")
   };
 });
