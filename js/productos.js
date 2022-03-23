@@ -1,5 +1,5 @@
-const productos = [
-  // tortas
+// array de tortas
+const tortas = [
   {
     id: 1,
     name: "torta floreada",
@@ -48,7 +48,10 @@ const productos = [
     price: 6500,
     img: "assets/productos-index/productos-img1.jpeg",
   },
-  // galletas
+];
+
+// array de galletas
+const galletas = [
   {
     id: 9,
     name: "galletas de queso",
@@ -73,7 +76,10 @@ const productos = [
     price: 650,
     img: "assets/productos-index/productos-img2.jpeg",
   },
-  // combos y propuestas
+];
+
+// array de combos
+const combos = [
   {
     id: 13,
     name: "combo de amor",

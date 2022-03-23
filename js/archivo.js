@@ -1,3 +1,6 @@
+// uso del Spread
+productos = [...tortas, ...galletas, ...combos];
+
 let carrito = [];
 if (localStorage.getItem("Carrito")) {
   carrito = JSON.parse(localStorage.getItem("Carrito"));
@@ -35,21 +38,38 @@ productos.forEach((producto) => {
   botonAgregar.onclick = () => {
     const existe = carrito.find((elemento) => elemento.id === producto.id);
 
-    if (existe) {
-      carrito.forEach((elemento) => {
-        if (elemento.id === producto.id) {
-          elemento.cantidad++;
-        }
-      });
-    } else {
-      carrito.push({
-        name: producto.name,
-        price: producto.price,
-        id: producto.id,
-        img: producto.img,
-        cantidad: 1,
-      });
-    }
+    /*
+      if (existe) {
+        carrito.forEach((elemento) => {
+         if (elemento.id === producto.id) {
+            elemento.cantidad++;
+          }
+        });
+      } else {
+        carrito.push({
+         name: producto.name,
+         price: producto.price,
+         id: producto.id,
+         img: producto.img,
+         cantidad: 1,
+       });
+     }
+    */
+
+    existe
+      ? carrito.forEach((elemento) => {
+          if (elemento.id === producto.id) {
+            elemento.cantidad++;
+          }
+        })
+      : carrito.push({
+          name: producto.name,
+          price: producto.price,
+          id: producto.id,
+          img: producto.img,
+          cantidad: 1,
+        });
+
     costoTotal = costoTotal + producto.price;
 
     console.log(carrito, costoTotal);
@@ -57,6 +77,6 @@ productos.forEach((producto) => {
     localStorage.setItem("Carrito", JSON.stringify(carrito));
     localStorage.setItem("costo", costoTotal);
 
-    alert("Se ha agregado tu producto")
+    alert("Se ha agregado tu producto");
   };
 });
