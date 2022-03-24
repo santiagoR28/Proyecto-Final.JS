@@ -37,14 +37,36 @@ const visualizar = () => {
 
     const btnQuitar = document.getElementById(`quitar${prodCarrrito.id}`);
     btnQuitar.onclick = () => {
-      carrito = carrito.filter((producto) => producto.id != prodCarrrito.id);
-      costoTotal = costoTotal - prodCarrrito.price * prodCarrrito.cantidad;
+      // carrito = carrito.filter((producto) => producto.id != prodCarrrito.id);
+      // costoTotal = costoTotal - prodCarrrito.price * prodCarrrito.cantidad;
 
-      console.log(carrito, costoTotal);
+      // console.log(carrito, costoTotal);
 
-      localStorage.setItem("Carrito", JSON.stringify(carrito));
-      localStorage.setItem("costo", costoTotal);
-      window.location.reload();
+      // localStorage.setItem("Carrito", JSON.stringify(carrito));
+      // localStorage.setItem("costo", costoTotal);
+      // window.location.reload();
+
+      // sweet alert
+      Swal.fire({
+        title: "Está seguro de eliminar el producto?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, seguro",
+        cancelButtonText: "No, no quiero",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          carrito = carrito.filter(
+            (producto) => producto.id != prodCarrrito.id
+          );
+          costoTotal = costoTotal - prodCarrrito.price * prodCarrrito.cantidad;
+
+          console.log(carrito, costoTotal);
+
+          localStorage.setItem("Carrito", JSON.stringify(carrito));
+          localStorage.setItem("costo", costoTotal);
+          window.location.reload();
+        }
+      });
     };
   });
 
@@ -56,11 +78,9 @@ const visualizar = () => {
   containerCosto.replaceChild(ContCosto, CostoViejo);
 
   let costoTotalView = document.createElement("h2");
-  if (costoTotal > 0) {
-    costoTotalView.innerHTML = `El costo total de tus productos es de: $${costoTotal}`;
-  } else {
-    costoTotalView.innerHTML = `No hay nada en tu carrito`;
-  }
+  costoTotal > 0
+    ? (costoTotalView.innerHTML = `El costo total de tus productos es de: $${costoTotal}`)
+    : (costoTotalView.innerHTML = `No hay nada en tu carrito`);
 
   ContCosto.append(costoTotalView);
 };

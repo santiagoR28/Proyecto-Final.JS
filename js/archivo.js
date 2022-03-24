@@ -38,24 +38,6 @@ productos.forEach((producto) => {
   botonAgregar.onclick = () => {
     const existe = carrito.find((elemento) => elemento.id === producto.id);
 
-    /*
-      if (existe) {
-        carrito.forEach((elemento) => {
-         if (elemento.id === producto.id) {
-            elemento.cantidad++;
-          }
-        });
-      } else {
-        carrito.push({
-         name: producto.name,
-         price: producto.price,
-         id: producto.id,
-         img: producto.img,
-         cantidad: 1,
-       });
-     }
-    */
-
     existe
       ? carrito.forEach((elemento) => {
           if (elemento.id === producto.id) {
@@ -77,6 +59,20 @@ productos.forEach((producto) => {
     localStorage.setItem("Carrito", JSON.stringify(carrito));
     localStorage.setItem("costo", costoTotal);
 
-    alert("Se ha agregado tu producto");
+    // Toastify
+    Toastify({
+      text: "Se ha agregado tu producto",
+      duration: 2000,
+      position: "left",
+      style: {
+        background: "#bd5c56",
+      },
+    }).showToast();
   };
 });
+
+/*
+  Elegi usar el Toastify para poder avisarle al usuario las acciones que va realizando sin interrumpir su interaccion con la pagina.
+
+  Elegi usar el Sweet Alert para poder consultar al usuario la decision de eliminar un producto del carrito o si clickeo sin querer (para ahorrarle tener que ir otra vez a la pagina de productos).
+*/
