@@ -37,16 +37,6 @@ const visualizar = () => {
 
     const btnQuitar = document.getElementById(`quitar${prodCarrrito.id}`);
     btnQuitar.onclick = () => {
-      // carrito = carrito.filter((producto) => producto.id != prodCarrrito.id);
-      // costoTotal = costoTotal - prodCarrrito.price * prodCarrrito.cantidad;
-
-      // console.log(carrito, costoTotal);
-
-      // localStorage.setItem("Carrito", JSON.stringify(carrito));
-      // localStorage.setItem("costo", costoTotal);
-      // window.location.reload();
-
-      // sweet alert
       Swal.fire({
         title: "Está seguro de eliminar el producto?",
         icon: "warning",

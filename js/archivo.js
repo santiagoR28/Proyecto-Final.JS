@@ -18,8 +18,8 @@ fetch(misProd)
       let productView = document.createElement("div");
       // tarjetas
       productView.innerHTML = ` 
-  <div class="card producto" style="width: 18rem">
-  <img
+      <div class="card producto" style="width: 18rem">
+      <img
        src="${producto.img}"
        class="card-img-top"
        />
@@ -72,9 +72,3 @@ fetch(misProd)
       };
     });
   });
-
-/*
-  Elegi usar el Toastify para poder avisarle al usuario las acciones que va realizando sin interrumpir su interaccion con la pagina.
-
-  Elegi usar el Sweet Alert para poder consultar al usuario la decision de eliminar un producto del carrito o si clickeo sin querer (para ahorrarle tener que ir otra vez a la pagina de productos).
-*/
