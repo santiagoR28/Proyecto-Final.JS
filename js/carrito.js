@@ -67,10 +67,14 @@ const visualizar = () => {
   ContCosto.setAttribute("id", "ContCosto");
   containerCosto.replaceChild(ContCosto, CostoViejo);
 
-  let costoTotalView = document.createElement("h2");
+  let costoTotalView = document.createElement("div");
   costoTotal > 0
-    ? (costoTotalView.innerHTML = `El costo total de tus productos es de: $${costoTotal}`)
-    : (costoTotalView.innerHTML = `No hay nada en tu carrito`);
+    ? (costoTotalView.innerHTML = `
+    <h2>El costo total de tus productos es de: $${costoTotal}</h2>
+    <div> 
+      <h2>Hace click <button class="btn btn-danger"><a class="links" href="pago.html">Acá</a></button> para pagar </h2>       
+    `)
+    : (costoTotalView.innerHTML = `<h2>No hay nada en tu carrito</h2>`);
 
   ContCosto.append(costoTotalView);
 };

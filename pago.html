@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/logo-adri'sCS.jpeg" />
+    <!-- BS css -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- titulo -->
+    <title>Adri's CakeShop - Pago</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Pago:</h1>
+    </header>
+
+    <main>
+      <h3>Productos:</h3>
+      <div id="prod">
+        <div id="pago"></div>
+      </div>
+
+      <div id="montoTotal"></div>
+
+      <div id="main">
+        <form id="contacto">
+          <h2>
+            Llena todos los campos con tus datos para hacer el pago de tus
+            productos.
+          </h2>
+
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" required />
+
+          <label for="apellido">Apellido</label>
+          <input type="text" name="apellido" required />
+
+          <label for="DNI">DNI (sin puntos)</label>
+          <input type="text" name="DNI" required />
+
+          <label for="tarj">Tarjeta</label>
+          <input type="text" name="tarj" required />
+
+          <label for="digitos">Tres Digitos</label>
+          <input type="password" name="digitos" required />
+
+          <label for="FdV">Fecha de vencimiento de la tarjeta</label>
+          <input type="text" name="FdV" required />
+
+          <label for="CP">Codigo Postal</label>
+          <input type="text" name="CP" required />
+
+          <!-- boton de enviar -->
+          <div class="botones">
+            <imput type="button" value="pago realizado">
+              <button id="pagoHecho" class="button">Enviar</button>
+            </imput>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- archivo.js -->
+    <script src="js/pago.js"></script>
+
+    <!-- sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
